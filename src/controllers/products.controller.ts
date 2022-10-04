@@ -33,7 +33,7 @@ export class ProductsController {
   }
 
   @Delete(':id')
-  delete(@Param('id') id: number) {
-    return id;
+  delete(@Param('id', ParseIntPipe) id: number) {
+    return this.productsService.remove(id);
   }
 }
